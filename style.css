@@ -1,25 +1,53 @@
-body {
-    background: rgb(255, 255, 255);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #gameCanvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     border: 5px solid black;
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    width: 900px;
-    height: 900px;
+    display: block;
+    background: url("background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
-
-.controls {
+#menu {
+    font-size: 20px;
+    padding: 0;
+    margin: auto;
+    display: block;
     position: absolute;
-    z-index: 10;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 5px solid black;
+    width: 500px;
+    height: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.controls,select,option{
-    font-size: 25px;
+
+#menu button {
+    all: unset;
+    cursor: pointer;
+    width: 250px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #dddddd;
 }

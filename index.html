@@ -3,21 +3,17 @@
   <head>
     <title>The Sociality Game!</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="data.js"></script>
   </head>
   <body>
-    <h1>The Sociality Game!</h1>
-    <p>A description can go here</p>
-    <canvas id="gameCanvas" width="1200" height="1200"></canvas>
-    <label for="animations">Choose Animation:</label>
-    <select id = "animations" name = "animations">
-        <option value="walk">Walk</option>
-    </select>
-    <button type="button" onclick="tableToCSV()">Download CSV</button>
+    <canvas id="gameCanvas"></canvas>
+    <div id="menu">
+      <h2>The game has ended!</h2> <br>
+      <button type="button" onclick="saveCSV(positionData)" id="downloadButton">Download CSV</button>
+      <button type="button" onclick="reload()" id="resetButton">Reset Game</button>
+    </div>
+    
 
-    <table id = "positions">
-
-    </table>
-    <script src ="tabletoCSV.js"></script>
-    <script src = "game.js"></script>
+    <script src = "script.js"></script>
   </body>
 </html>
