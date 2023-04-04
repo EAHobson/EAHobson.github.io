@@ -2,7 +2,7 @@
 const MAPWIDTH = 50; // width of the map (in tiles)
 const MAPHEIGHT = 50; // height of the map (in tiles)
 const TIMESPEED = 5; // the speed that time passes in the game (amount of time units from csv per second)
-const CHARACTER_SIZE = 5; // the size of the characters (in tiles)
+const CHARACTER_SIZE = 3; // the size of the characters (in tiles)
 const PLAYER_SPEED = 1; // the speed of the player (tiles per second)
 const PLAYER_ID = -1; // the id the player will have in the final data sheet (in the agent column)
 const TAG_COLOR = "black" // the color of the tag above the characters
@@ -230,6 +230,7 @@ window.onresize = () => {
 }
 function start() {
     //#Need to clear out current stuff from map.
+    lastTime = Date.now()
     createCharacters();
     update();
 }
