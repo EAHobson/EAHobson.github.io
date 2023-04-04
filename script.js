@@ -124,6 +124,18 @@ class Player extends Character {
 function createCharacters() {
     let player = new Player(0, 0);
     characters.push(player);
+
+    //NPU_DATA_SP and NPU_RANDOM
+    var e = document.getElementById("movementList");
+    var val = e.value;
+    if (val == "random") {
+        NPU_DATA = NPU_RANDOM
+      } else if (val == "sp") {
+        NPU_DATA = NPU_DATA_SP
+      } else {
+        NPU_DATA = NPU_RANDOM
+      }
+
     let data = readCSV(NPU_DATA);
     data = data.map((d) => ({...d, timestep: parseInt(d.timestep), 'x-coor': parseInt(d['x-coor']), 'y-coor': parseInt(d['y-coor']), 'agent': parseInt(d['agent'])}));
     endTime = Math.max(...data.map((d) => d.timestep))
@@ -216,5 +228,8 @@ window.onresize = () => {
     canvas.style.width = canvas.width + "px";
     canvas.style.height = canvas.height + "px";
 }
-createCharacters();
-update();
+function start() {
+    //#Need to clear out current stuff from map.
+    createCharacters();
+    update();
+}

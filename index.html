@@ -6,6 +6,13 @@
     <script src="data.js"></script>
   </head>
   <body>
+    <button type="button" onclick="start()" id="startButton">Start Game</button>
+    <b> Select NPC movement style </b>
+    <select id = "movementList" onchange = "selectMovePattern()" >
+            <option> ---Choose Movement--- </option>
+            <option value = "random">Random</option>
+            <option value = "sp">Social Preferences</option>
+    </select>
     <canvas id="gameCanvas"></canvas>
     <div id="menu">
       <h2>The game has ended!</h2> <br>
