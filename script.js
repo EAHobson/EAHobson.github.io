@@ -3,7 +3,7 @@ const MAPWIDTH = 50; // width of the map (in tiles)
 const MAPHEIGHT = 50; // height of the map (in tiles)
 const TIMESPEED = 5; // the speed that time passes in the game (amount of time units from csv per second)
 const CHARACTER_SIZE = 3; // the size of the characters (in tiles)
-const PLAYER_SPEED = 1; // the speed of the player (tiles per second)
+const PLAYER_SPEED = 3; // the speed of the player (tiles per second)
 const PLAYER_ID = -1; // the id the player will have in the final data sheet (in the agent column)
 const TAG_COLOR = "black" // the color of the tag above the characters
 
@@ -88,7 +88,7 @@ class Character {
 class Player extends Character {
     constructor(x, y) {
         super(x, y, PLAYER_ID, "player", []);
-        this.speed = 1;
+        this.speed = PLAYER_SPEED;
     }
     update(timePassed, totaltime) {
         if (keys["ArrowRight"]) {
@@ -125,7 +125,7 @@ class Player extends Character {
 }
 
 function createCharacters() {
-    let player = new Player(0, 0);
+    let player = new Player(7, 27);
     characters.push(player);
 
     //NPU_DATA_SP and NPU_RANDOM
