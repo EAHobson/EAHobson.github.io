@@ -6,18 +6,6 @@
     <script src="data.js"></script>
   </head>
   <body>
-    <fieldset id="gameControlMenu">
-      <legend>Sociality Game Menu</legend>
-        <label for="movementList"><b>Select NPC movement style</b></label>
-        <select id = "movementList" onchange = "selectMovePattern()" >
-                <option> ---Choose Movement--- </option>
-                <option value = "random">Random</option>
-                <option value = "sp">Social Preferences</option>
-        </select>
-        <br><br>
-        <button type="button" onclick="start()" id="startButton">Start Game</button>
-        <button type="button" onclick="reload()" id="resetButton">Reset Game</button>
-      </fieldset>
 
     <canvas id="gameCanvas"></canvas>
     <div id="menu">
@@ -25,6 +13,19 @@
       <button type="button" onclick="saveCSV(positionData)" id="downloadButton">Download CSV</button>
       <button type="button" onclick="reload()" id="resetButton">Reset Game</button>
     </div>
+    <fieldset id="gameControlMenu">
+      <legend align="center">Sociality Game Menu</legend>
+        <label for="movementList"><b>Select NPC movement style</b></label>
+        <select id = "movementList" onchange = "selectMovePattern()" >
+                <option> ---Choose Movement--- </option>
+                <option value = "rand_walk">Random Walk</option>
+                <option value = "rand_forag">Random Foraging</option>
+                <option value = "sp">Social Preferences</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="start()" id="startButton">Start Game</button>
+        <!--<button type="button" onclick="reload()" id="resetButton">Reset Game</button>-->
+      </fieldset>
     
 
     <script src = "script.js"></script>

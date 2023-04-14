@@ -1,4 +1,4 @@
-const NPU_RANDOM = `
+const NPU_RANDOM_FORAG = `
 timestep, agent, x-coor, y-coor,label
 1,0,8,27,Bat 0
 1,1,8,27,Bat 1
@@ -23992,6 +23992,21 @@ timestep, agent, x-coor, y-coor,label
 999,9,7,27,Bat 9
 999,10,0,50,Bat 10
 999,11,7,27,Bat 11
+1000,0,7,27,Bat 0
+1000,1,7,27,Bat 1
+1000,2,7,27,Bat 2
+1000,3,7,27,Bat 3
+1000,4,7,27,Bat 4
+1000,5,0,50,Bat 5
+1000,6,7,27,Bat 6
+1000,7,0,50,Bat 7
+1000,8,7,27,Bat 8
+1000,9,7,27,Bat 9
+1000,10,0,50,Bat 10
+1000,11,7,27,Bat 11
+`
+
+NPU_RANDOM_WALK = `
 1000,0,7,27,Bat 0
 1000,1,7,27,Bat 1
 1000,2,7,27,Bat 2

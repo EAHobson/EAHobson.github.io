@@ -22,6 +22,9 @@ canvas.style.width = canvas.width + "px";
 canvas.style.height = canvas.height + "px";
 let ctx = canvas.getContext("2d");
 
+document.getElementById("gameCanvas").style.display = "none";
+document.getElementById("gameControlMenu").style.display = "flex";
+
 let positionData = [];
 let characters = [];
 let lastTime = Date.now();
@@ -128,12 +131,16 @@ function createCharacters() {
     //NPU_DATA_SP and NPU_RANDOM
     var e = document.getElementById("movementList");
     var val = e.value;
-    if (val == "random") {
-        NPU_DATA = NPU_RANDOM
-      } else if (val == "sp") {
+
+    if (val == "rand_walk") {
+        NPU_DATA = NPU_RANDOM_WALK
+      } else if(val == "rand_forag"){
+        NPU_DATA = NPU_RANDOM_FORAG
+      }
+      else if (val == "sp") {
         NPU_DATA = NPU_DATA_SP
       } else {
-        NPU_DATA = NPU_RANDOM
+        NPU_DATA = NPU_RANDOM_FORAG
       }
 
     let data = readCSV(NPU_DATA);
@@ -230,6 +237,9 @@ window.onresize = () => {
 }
 function start() {
     //#Need to clear out current stuff from map.
+    document.getElementById("gameCanvas").style.display = "flex";
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("gameControlMenu").style.display = "none";
     lastTime = Date.now()
     createCharacters();
     update();
